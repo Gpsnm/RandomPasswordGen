@@ -88,16 +88,24 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+
 // Function to prompt user for password options
 function getPasswordOptions() {
+    let numOfChars = prompt('Choose A number of characters between 10 - 64.')
+let specialChar = prompt('Would you like to use special characters?')
+let upperCase = prompt("Would you like to use uppercase letters?")
+let lowerCase = prompt("Would you like to use lowercase letters?")
+let NumericCase = prompt("Would you like to use numbers?")
 
-}
+
+};
+
+
+
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
 }
-
 // Function to generate password with user input
 function generatePassword() {
 
@@ -108,6 +116,7 @@ var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
+    getPasswordOptions();
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
 
