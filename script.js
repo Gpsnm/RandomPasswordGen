@@ -87,10 +87,11 @@ var upperCasedCharacters = [
   'Y',
   'Z'
 ];
-
+let numOfChar;
+let usedChar =[];
 // Function to prompt user for password options
 function getPasswordOptions() {
-let numOfChar = parseInt(prompt("Please choose a number of characters between 10 and 64"));
+numOfChar = parseInt(prompt("Please choose a number of characters between 10 and 64"));
 if (isNaN(numOfChar)){
   alert("Please enter a number.");
   return;
@@ -114,37 +115,32 @@ if (specialChar === false && upperCase === false && lowerCase === false && Numer
   return;
 }
 
-let getPasswordOptions = {
+let PasswordOptions = {
   length: numOfChar,
   isUpperCase: upperCase,
   isLowerCase: lowerCase,
   isSpecialChar: specialChar,
   isNumericCase: NumericCase,
 };
+};
 
-console.log(getPasswordOptions.isSpecialChar);
-console.log(getPasswordOptions.isUpperCase);
-console.log(getPasswordOptions.isLowerCase);
-console.log(getPasswordOptions.isNumericCase);
-}
+
 
 // Function for getting a random element from an array
 function getRandom(arr) {
 let randomNumber = Math.floor(Math.random()* arr.length);
-console.log(arr[randomNumber]);
 return arr[randomNumber];
 }
 
 // Function to generate password with user input
 function generatePassword() {
-
 }
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
-function writePassword() {
+function writePassword(){;
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
 
@@ -152,4 +148,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener('click', getPasswordOptions);
+generateBtn.addEventListener('click', writePassword);
