@@ -92,6 +92,7 @@ let usedChar =[];
 // Function to prompt user for password options
 function getPasswordOptions() {
 numOfChar = parseInt(prompt("Please choose a number of characters between 10 and 64"));
+// if statements to validate that user inputs correct information.
 if (isNaN(numOfChar)){
   alert("Please enter a number.");
   return;
@@ -104,17 +105,17 @@ if ( numOfChar > 64){
   alert("Password must be less than 64 characters.");
   return;
 }
-
+// variable for all the inputs we need.
 let specialChar = confirm('Would you like to use special characters?');
 let upperCase = confirm("Would you like to use uppercase letters?");
 let lowerCase =confirm("Would you like to use lowercase letters?");
 let NumericCase = confirm("Would you like to use numbers?");
-
+// validation to ensure the user chooses at least one choice.
 if (specialChar === false && upperCase === false && lowerCase === false && NumericCase === false){
   alert("You must pick at least one option.");
   return;
 }
-
+// object used to store all of the variables we need.
 let PasswordOptions = {
   length: numOfChar,
   isUpperCase: upperCase,
@@ -122,7 +123,7 @@ let PasswordOptions = {
   isSpecialChar: specialChar,
   isNumericCase: NumericCase,
 };
-
+// used to create new array containing existing array if returns true.
 if (PasswordOptions.isSpecialChar === true){
 usedChar = usedChar.concat(specialCharacters);
 }
@@ -135,7 +136,6 @@ usedChar = usedChar.concat(lowerCasedCharacters);
 if(PasswordOptions.isNumericCase === true){
 usedChar = usedChar.concat(numericCharacters);
 }
-console.log(usedChar);
 };
 
 
