@@ -114,7 +114,18 @@ if (specialChar === false && upperCase === false && lowerCase === false && Numer
   return;
 }
 
+let getPasswordOptions = {
+  length: numOfChar,
+  isUpperCase: upperCase,
+  isLowerCase: lowerCase,
+  isSpecialChar: specialChar,
+  isNumericCase: NumericCase,
+};
 
+console.log(getPasswordOptions.isSpecialChar);
+console.log(getPasswordOptions.isUpperCase);
+console.log(getPasswordOptions.isLowerCase);
+console.log(getPasswordOptions.isNumericCase);
 }
 
 // Function for getting a random element from an array
@@ -126,7 +137,7 @@ return arr[randomNumber];
 
 // Function to generate password with user input
 function generatePassword() {
-getRandom(specialCharacters,lowerCasedCharacters,upperCasedCharacters,numericCharacters);
+
 }
 
 // Get references to the #generate element
@@ -141,4 +152,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener('click', generatePassword);
+generateBtn.addEventListener('click', getPasswordOptions);
