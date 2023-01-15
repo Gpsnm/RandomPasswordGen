@@ -100,7 +100,7 @@ if( numOfChar < 10){
   return;
 }
 if ( numOfChar > 64){
-  alert("Password must be less than 10 characters.")
+  alert("Password must be less than 64 characters.")
   return;
 }
 
@@ -128,4 +128,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
+generateBtn.addEventListener('click', getPasswordOptions);
