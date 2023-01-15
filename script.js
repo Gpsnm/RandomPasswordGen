@@ -149,6 +149,10 @@ return arr[randomNumber];
 // Function to generate password with user input
 function generatePassword() {
   let password = "";
+  for (let i=0; i < numOfChar; i++){
+password += getRandom(usedChar);
+}
+return password;
 }
 
 // Get references to the #generate element
