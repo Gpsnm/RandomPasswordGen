@@ -91,6 +91,19 @@ var upperCasedCharacters = [
 // Function to prompt user for password options
 function getPasswordOptions() {
 let numOfChar = parseInt(prompt("Please choose a number of characters between 10 and 64"))
+if (isNaN(numOfChar)){
+  alert("Please enter a number.")
+  return;
+}
+if( numOfChar < 10){
+  alert("Password must be 10 characters or more.")
+  return;
+}
+if ( numOfChar > 64){
+  alert("Password must be less than 10 characters.")
+  return;
+}
+
 }
 
 // Function for getting a random element from an array
