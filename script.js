@@ -122,6 +122,20 @@ let PasswordOptions = {
   isSpecialChar: specialChar,
   isNumericCase: NumericCase,
 };
+
+if (PasswordOptions.isSpecialChar === true){
+usedChar = usedChar.concat(specialCharacters);
+}
+if ( PasswordOptions.isUpperCase === true){
+usedChar = usedChar.concat(upperCasedCharacters);
+}
+if (PasswordOptions.isLowerCase === true){
+usedChar = usedChar.concat(lowerCasedCharacters);
+}
+if(PasswordOptions.isNumericCase === true){
+usedChar = usedChar.concat(numericCharacters);
+}
+console.log(usedChar);
 };
 
 
