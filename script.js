@@ -148,6 +148,7 @@ return arr[randomNumber];
 
 // Function to generate password with user input
 function generatePassword() {
+  // for loop that loops through numOfChar decided by the user and adds a random one to var password.
   let password = "";
   for (let i=0; i < numOfChar; i++){
 password += getRandom(usedChar);
@@ -159,7 +160,8 @@ return password;
 var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
-function writePassword(){;
+function writePassword(){
+  getPasswordOptions();
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
 
