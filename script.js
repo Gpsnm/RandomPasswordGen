@@ -90,19 +90,30 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-let numOfChar = parseInt(prompt("Please choose a number of characters between 10 and 64"))
+let numOfChar = parseInt(prompt("Please choose a number of characters between 10 and 64"));
 if (isNaN(numOfChar)){
-  alert("Please enter a number.")
+  alert("Please enter a number.");
   return;
 }
 if( numOfChar < 10){
-  alert("Password must be 10 characters or more.")
+  alert("Password must be 10 characters or more.");
   return;
 }
 if ( numOfChar > 64){
-  alert("Password must be less than 64 characters.")
+  alert("Password must be less than 64 characters.");
   return;
 }
+
+let specialChar = confirm('Would you like to use special characters?');
+let upperCase = confirm("Would you like to use uppercase letters?");
+let lowerCase =confirm("Would you like to use lowercase letters?");
+let NumericCase = confirm("Would you like to use numbers?");
+
+if (specialChar === false && upperCase === false && lowerCase === false && NumericCase === false){
+  alert("You must pick at least one option.");
+  return;
+}
+
 
 }
 
