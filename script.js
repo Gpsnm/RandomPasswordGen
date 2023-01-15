@@ -119,12 +119,14 @@ if (specialChar === false && upperCase === false && lowerCase === false && Numer
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+let randomNumber = Math.floor(Math.random()* arr.length);
+console.log(arr[randomNumber]);
+return arr[randomNumber];
 }
 
 // Function to generate password with user input
 function generatePassword() {
-
+getRandom(specialCharacters,lowerCasedCharacters,upperCasedCharacters,numericCharacters);
 }
 
 // Get references to the #generate element
@@ -139,4 +141,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener('click', getPasswordOptions);
+generateBtn.addEventListener('click', generatePassword);
